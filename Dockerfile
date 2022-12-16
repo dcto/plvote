@@ -9,16 +9,8 @@ RUN apt-get update && apt-get install -y \
 
 RUN pecl install redis \
     && docker-php-ext-install bcmath \
-	&& docker-php-ext-enable redis bcmath
+    && docker-php-ext-install pdo_mysql \
+	&& docker-php-ext-enable redis bcmath pdo_mysql
 
 RUN curl -o /usr/bin/composer https://mirrors.aliyun.com/composer/composer.phar \
     && chmod +x /usr/bin/composer
-
-RUN rm -rf /var/www/plvote \
-    && mkdir -p /var/www/plvote
-
-COPY * /var/www/plvote
-
-WORKDIR /var/www/plvote
-
-RUN composer update

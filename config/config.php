@@ -53,7 +53,7 @@
             #read.host[]   =   192.168.1.101
             #read.host[]   =   192.168.1.102
             #连接地址
-            'host'      =>   'localhost',
+            'host'      =>   'mysql',
             #连接端口
             'port'      =>   '3306',
             #数据库名称
@@ -106,7 +106,7 @@
             //Redis缓存
             'redis' =>  [
                 'default'   =>  [
-                    'host'=> '127.0.0.1',
+                    'host'=> 'redis',
                     'port'=>'6379',
                     'prefix'=>'vm:',
                     'timeout'=>'5',

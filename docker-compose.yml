@@ -1,5 +1,5 @@
 
-version: "2.3"
+version: "3.7"
 services:
   php:
     build: 
@@ -7,9 +7,11 @@ services:
     privileged: true
     volumes:
       - .:/var/www/plvote
-    command:  php -S 0.0.0.0:8080 -t /var/www/plvote/www
+    command: /bin/bash -c " cd /var/www/plvote && composer update &&  php -S 0.0.0.0:8080 -t /var/www/plvote/www"
     ports:
       - "8080:8080"
+    networks:
+      - plnet  
   redis:
     image: redis    
     ports: 
@@ -21,9 +23,13 @@ services:
     environment:
       - MYSQL_DATABASE=plvote
       - MYSQL_ROOT_PASSWORD=root
+    volumes:
+      - ./plvote.sql:/docker-entrypoint-initdb.d/plvote.sql
     restart: always
     command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
 
-networks: 
-  default:
-    driver: bridge
+networks:
+  plnet:
+  pldb:
+    external: true
+    name: shared_mysql
