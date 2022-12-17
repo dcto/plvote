@@ -193,5 +193,6 @@
 
 'providers' => [
     \Illuminate\Events\EventServiceProvider::class,
+    'isbn'=>\App\Provider\IsbnServiceProvider::class
 ]
 ];

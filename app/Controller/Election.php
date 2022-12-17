@@ -56,6 +56,10 @@ class Election extends Controller {
                     redis()->hset($election->id, $item->id, 0);
                 });
                 
+            }else{
+                //....投票结束
+                //....推送用户邮件地址到邮件队列
+                //....发送电子邮件通知投票结果到每一个普通用户
             }
 
             //满足条件，投票开关
