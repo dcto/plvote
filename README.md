@@ -52,7 +52,7 @@ docker-compose up -d
 
 Step 2. 
 
-http://localhost:8080
+http://localhost:8080/index.php
 
 ### PHP Deployment
 
@@ -84,6 +84,12 @@ Step 5.
 
 ```
 chmod 777 -R ./runtime  目录权限
+```
+
+Step 6.
+
+```
+设定nginx index = www/index.php
 ```
 
 ### About Hongkong ID valid verify
