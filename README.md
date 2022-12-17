@@ -85,3 +85,40 @@ Step 5.
 ```
 chmod 777 -R ./runtime  目录权限
 ```
+
+### About Hongkong ID valid verify
+
+in the app/Controller/User.php
+
+```
+    private function validHongkongId($id)
+    {
+        $id = preg_replace(['/[-\/\s]/', '/[\(\)]/'],'', strtoupper($id)); //ID正则替换
+        if(!preg_match('/^[A-NP-Z]{1,2}[0-9]{6}[0-9A]$/', $id)) return false; //ID正则校对
+		$weight = strlen($id);//HKID长度
+		$weightedSum = $weight == 8 ? 324 : 0; //HKID权重
+		$identifier = substr($id, 0, -1);
+		$checkDigit = substr($id, -1) == 'A' ? 10 : substr($id, -1);
+
+		foreach (str_split($identifier) as $char){
+            $charValue = ctype_alpha($char) ? $this->charCodeAt($char, 0) - 55 : +$char; //HKID = { A: 10, B: 11... Z: 35 } so charcode - 55
+            $weightedSum += $charValue * $weight;
+            $weight--;
+        }
+        return ($weightedSum + $checkDigit) % 11 == 0;//判断algorithm算法布尔值
+    }
+```
+此算法使用了国际ISBN-10算法
+请在调用/signin用户登记接口时，请填写真实的ID否则无法通过验证
+
+
+### 普通用户流程
+```
+登记(/signin)->获取选举场次(/election/:id)->选择候选人->点击投票(调用投票vote api)
+```
+
+### 系统管理流程
+
+```
+新建选举场次->添加候选人(/candidate/create)->选举开始(/election/switch/:id)->查看投票情况(/candidate/:election_id)
+```
