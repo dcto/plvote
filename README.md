@@ -92,9 +92,9 @@ Step 6.
 设定nginx index = www/index.php
 ```
 
-### About Hongkong ID valid verify
+### About Hongkong ID ISBN-10 Valid Verify Service
 
-in the app/Controller/User.php
+in the provider/IsbnServiceProvier.php
 
 ```
     private function validHongkongId($id)
