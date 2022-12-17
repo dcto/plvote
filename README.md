@@ -2,11 +2,17 @@
 
 The PL Vote  Test Project
 
-The Environment  Require PHP7.4、Mysql5.7+, Redis6+
+<img src="https://img.shields.io/badge/License-MIT-brightgreen" />
+<img src="https://img.shields.io/badge/php-%5E7.4-brightgreen" alt="PHP version" />  
+
+
+<img src="https://img.shields.io/badge/MYSQL-^5.7-brightgreen" />
+
+<img src="https://img.shields.io/badge/Redis-^6.0-brightgreen" />
+
+<img src="https://img.shields.io/badge/Restful-Yes-brightgreen" />
 
 The Documents Of APIs Link https://console-docs.apipost.cn/preview/de992656cfc14ec1/d079d168502f68f4?target_id=27b7269c-8ac9-4bc0-8e9f-549d7e31d677
-
- <a href="https://packagist.org/packages/varimax/varimax"><img src="https://img.shields.io/packagist/l/varimax/varimax" alt="License"></a> <img src="https://img.shields.io/packagist/php-v/varimax/varimax" alt="PHP version"> <a href="https://packagist.org/packages/varimax/varimax"><img src="https://img.shields.io/github/v/release/dcto/varimax" alt="Latest Stable Version"></a>  <a href="https://packagist.org/packages/varimax/varimax"><img src="https://img.shields.io/packagist/dt/varimax/varimax" alt="Total Downloads"></a>
 
 ### Directory Structure
 
