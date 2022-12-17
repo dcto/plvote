@@ -13,7 +13,7 @@ The PL Vote  Test Project
 [接口文档 APIs Document.md](https://github.com/dcto/plvote/blob/main/APIs%20Documents.md)
 
 
-### Directory Structure
+### Directory Preview
 
 ```
 ├── Dockerfile  //docker php脚本
