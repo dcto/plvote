@@ -37,12 +37,12 @@ The PL Vote  Test Project
 ├── plvote.sql    //数据库结构
 ├── runtime       //运行日志缓存cache
 │   └── logs
-├── test        
+├── tests       //Unit Tests        
 └── www        //入口目录
     └── index.php
 ```
 
-### Docker Deployment
+### Docker 部署
 
 Step 1. 
 
@@ -54,7 +54,7 @@ Step 2.
 
 http://localhost:8080/index.php
 
-### PHP Deployment
+### Linux 部署
 
 Step 1.
 
