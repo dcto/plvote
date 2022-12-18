@@ -42,6 +42,8 @@ The PL Vote  Test Project
     └── index.php
 ```
 
+
+
 ### Docker 部署
 
 Step 1. 
@@ -128,3 +130,8 @@ in the provider/IsbnServiceProvier.php
 ```
 新建选举场次->添加候选人(/candidate/create)->选举开始(/election/switch/:id)->查看投票情况(/candidate/:election_id)
 ```
+
+
+### 关于发送邮件通知
+
+目前没有smtp服务器，暂时省略
