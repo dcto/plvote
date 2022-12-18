@@ -119,6 +119,10 @@ in the provider/IsbnServiceProvier.php
 此算法使用了国际ISBN-10算法
 请在调用/signin用户登记接口时，请填写真实的ID否则无法通过验证
 
+### 普通用户登记
+```
+调用 /sign接口，获取token， 把token置于 head中使用bearer auth进行验证。
+```
 
 ### 普通用户流程
 ```
